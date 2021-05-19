@@ -1,21 +1,21 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import { ExpenseList, MainContainer, TotalAmount } from "../components";
 
 const TodayScreen = () => {
+  const expenses = [
+    { id: "1", description: "Cafe", amount: 2 },
+    { id: "2", description: "Alquiler", amount: 500 },
+    { id: "3", description: "Pizza", amount: 10 },
+    { id: "4", description: "Tostada de aguacate", amount: 6 },
+    { id: "5", description: "Cerveza bien fresquita", amount: 3 },
+  ];
+
   return (
-    <View style={styles.container}>
-      <Text>Today Screen</Text>
-    </View>
+    <MainContainer>
+      <TotalAmount amount="1000" />
+      <ExpenseList expenses={expenses} />
+    </MainContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
 
 export default TodayScreen;
