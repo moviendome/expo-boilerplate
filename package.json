@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "electron": "^6.0.12",
     "expo": "~41.0.1",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
@@ -16,7 +17,9 @@
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
+    "@babel/core": "^7.9.0",
+    "@expo/electron-adapter": "^0.0.55",
+    "@expo/webpack-config": "^0.12.71"
   },
   "private": true
 }
