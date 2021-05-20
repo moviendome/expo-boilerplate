@@ -1,21 +1,19 @@
 import React from "react";
+import { Button } from "react-native";
+import { useStoreState } from "easy-peasy";
+import { useNavigation } from "@react-navigation/native";
 import { ExpenseList, MainContainer, TotalAmount } from "../components";
 
 const TodayScreen = () => {
-  const expenses = [
-    { id: "1", description: "Cafe", amount: 2 },
-    { id: "2", description: "Alquiler", amount: 500 },
-    { id: "3", description: "Pizza", amount: 10 },
-    { id: "4", description: "Tostada de aguacate", amount: 6 },
-    { id: "5", description: "Cerveza bien fresquita", amount: 3 },
-  ];
+  const navigation = useNavigation();
+  const expenses = useStoreState((state) => state.expenses);
 
   return (
     <MainContainer>
       <TotalAmount amount="1000" />
       <ExpenseList expenses={expenses} />
+      <Button onPress={() => navigation.navigate("Add")} title="Add" />
     </MainContainer>
   );
 };
-
 export default TodayScreen;
